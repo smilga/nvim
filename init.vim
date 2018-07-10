@@ -15,7 +15,15 @@ let g:enable_italic_font = 1
 let g:hybrid_transparent_background = 1
 let g:airline_theme='onedark'
 
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
+imap   <S-Tab>   <plug>(emmet-expand-abbr)
+
+"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
+let NERDTreeShowHidden=1
 
 "let g:airline#extensions#tabline#enabled = 1
 
@@ -132,6 +140,7 @@ call plug#begin()
 	Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
     Plug 'scrooloose/nerdcommenter'
+    Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
