@@ -15,6 +15,10 @@ let g:enable_italic_font = 1
 let g:hybrid_transparent_background = 1
 let g:airline_theme='onedark'
 
+highlight ALEWarning ctermbg=DarkMagenta
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
 
@@ -50,6 +54,7 @@ endif
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif " close scratch buffer
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:airline#extensions#ale#enabled = 1
+set splitbelow
 
 let g:ale_lint_on_save = 1
 " Write this in your vimrc file
@@ -141,6 +146,7 @@ call plug#begin()
     Plug 'mattn/emmet-vim'
     Plug 'scrooloose/nerdcommenter'
     Plug 'tpope/vim-fugitive'
+	Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
