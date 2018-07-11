@@ -66,8 +66,6 @@ let g:ale_lint_on_enter = 0
 
 let g:ale_set_signs = 1
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
 let g:ale_warn_about_trailing_whitespace = 0
 hi ALEErrorSign   ctermfg=15 ctermbg=236
 hi ALEInfoSign    ctermfg=15 ctermbg=236
