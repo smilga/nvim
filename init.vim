@@ -28,6 +28,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 let NERDTreeShowHidden=1
+" turn off autocomplete preview
+set completeopt-=preview
 
 "let g:airline#extensions#tabline#enabled = 1
 
@@ -203,7 +205,6 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
-let g:go_auto_sameids = 1
 
 let g:go_auto_type_info = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
