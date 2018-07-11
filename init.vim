@@ -56,6 +56,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:airline#extensions#ale#enabled = 1
 set splitbelow
 
+let g:go_autodetect_gopath = 1
 let g:ale_lint_on_save = 1
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
@@ -73,10 +74,23 @@ hi ALEInfoSign    ctermfg=15 ctermbg=236
 hi ALEWarningSign ctermfg=15 ctermbg=236
 
 let g:ale_linters = {
-  \ 'go': ['gometalinter', 'staticcheck', 'go-vet', 'gosimple'],
+  \ 'go': ['gometalinter'],
   \ 'javascript': ['eslint']
   \ }
-
+let g:ale_go_gometalinter_options = '
+  \ --aggregate
+  \ --disable=gas
+  \ --disable=goconst
+  \ --disable=gocyclo
+  \ --disable=vetshadow
+  \ --disable=gotype
+  \ --enable=misspell
+  \ --enable=unused
+  \ --fast
+  \ --sort=line
+  \ --tests
+  \ --vendor
+  \ '
 
 " Emmet
 imap <C-l> <C-y>,
