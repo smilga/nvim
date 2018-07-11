@@ -63,9 +63,20 @@ let g:ale_lint_on_text_changed = 'never'
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 
-let g:ale_fixers = {
+let g:ale_set_signs = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:ale_warn_about_trailing_whitespace = 0
+hi ALEErrorSign   ctermfg=15 ctermbg=236
+hi ALEInfoSign    ctermfg=15 ctermbg=236
+hi ALEWarningSign ctermfg=15 ctermbg=236
+
+let g:ale_linters = {
+  \ 'go': ['gometalinter', 'staticcheck', 'go-vet', 'gosimple'],
   \ 'javascript': ['eslint']
   \ }
+
 
 " Emmet
 imap <C-l> <C-y>,
@@ -180,7 +191,11 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
+let g:go_auto_sameids = 1
+
+let g:go_auto_type_info = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+autocmd FileType go nmap <buffer> <leader>g :GoDef<cr>
 
 function! ClipboardYank()
   call system('xclip -i -selection clipboard', @@)
