@@ -21,6 +21,9 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
+" Search ignore case
+:set ignorecase
+:set smartcase
 
 set nocp
 runtime! plugin/ctrlp.vim
@@ -175,6 +178,8 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'tpope/vim-fugitive'
 	Plug 'ekalinin/Dockerfile.vim'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'majutsushi/tagbar'
 
 call plug#end()
 
@@ -231,6 +236,7 @@ nmap <leader>r :syntax sync fromstart<cr>
 nmap <leader>l :CtrlPBuffer<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
+nmap <C-_> :TagbarToggle<cr>
 nmap <C-F> <Plug>CtrlSFPrompt
 nmap <leader>k :BD<CR>
 
