@@ -6,6 +6,8 @@ set noswapfile
 set number relativenumber
 highlight LineNr guifg=#d7d7d7 guibg=bg  
 
+set hidden
+
 set termguicolors
 syntax enable
 set background=dark
@@ -180,6 +182,7 @@ call plug#begin()
 	Plug 'ekalinin/Dockerfile.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
+    Plug 'hushicai/tagbar-javascript.vim'
 
 call plug#end()
 
