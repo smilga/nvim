@@ -21,6 +21,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
+set completeopt-=preview
 
 "let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
 let g:ctrlp_custom_ignore = {
@@ -28,6 +29,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 let NERDTreeShowHidden=1
+
+" Let switch buffer if unsaved changes
+set hidden
 
 "let g:airline#extensions#tabline#enabled = 1
 
@@ -170,6 +174,7 @@ call plug#begin()
     Plug 'scrooloose/nerdcommenter'
     Plug 'tpope/vim-fugitive'
 	Plug 'ekalinin/Dockerfile.vim'
+    Plug 'diepm/vim-rest-console'
 
 call plug#end()
 
@@ -197,13 +202,13 @@ let g:ctrlp_custom_ignore = {
 " GO-Vim
 let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
+let g:go_highlight_fields = 0
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_highlight_operators = 1
+let g:go_highlight_operators = 0
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
-let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 
 let g:go_auto_type_info = 1
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
