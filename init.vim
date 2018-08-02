@@ -23,6 +23,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
+
 set completeopt-=preview
 " Search ignore case
 :set ignorecase
@@ -38,7 +39,6 @@ let g:ctrlp_custom_ignore = {
 
 let NERDTreeShowHidden=1
 " turn off autocomplete preview
-set completeopt-=preview
 
 " Let switch buffer if unsaved changes
 set hidden
@@ -185,13 +185,13 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
 	Plug 'ekalinin/Dockerfile.vim'
     Plug 'diepm/vim-rest-console'
-    Plug 'ludovicchabant/vim-gutentags'
 	Plug 'skywind3000/gutentags_plus'
-    Plug 'majutsushi/tagbar'
     Plug 'hushicai/tagbar-javascript.vim'
     Plug 'Quramy/tsuquyomi'
     Plug 'leafgarland/typescript-vim'
     Plug 'skwp/greplace.vim'
+    Plug 'ludovicchabant/vim-gutentags'
+    Plug 'majutsushi/tagbar'
 
 call plug#end()
 
