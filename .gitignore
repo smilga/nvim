@@ -1,2 +1,6 @@
 .netrwhist
 plugged
+tags
+tags.temp
+tags.lock
+symlinks/.ctags

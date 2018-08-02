@@ -6,6 +6,8 @@ set noswapfile
 set number relativenumber
 highlight LineNr guifg=#d7d7d7 guibg=bg  
 
+set hidden
+
 set termguicolors
 syntax enable
 set background=dark
@@ -22,13 +24,21 @@ let g:ale_set_quickfix = 1
 
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
 set completeopt-=preview
+" Search ignore case
+:set ignorecase
+:set smartcase
 
-"let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+set nocp
+runtime! plugin/ctrlp.vim
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*/node_modules/*,*/vendor/*,*.exe,*.so,*.dat
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ 'dir':  '\.git$\|\node_modules$\|\.hg$\|\.svn$\|\.yardoc$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
+
 let NERDTreeShowHidden=1
+" turn off autocomplete preview
+set completeopt-=preview
 
 " Let switch buffer if unsaved changes
 set hidden
@@ -175,12 +185,34 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
 	Plug 'ekalinin/Dockerfile.vim'
     Plug 'diepm/vim-rest-console'
+    Plug 'ludovicchabant/vim-gutentags'
+	Plug 'skywind3000/gutentags_plus'
+    Plug 'majutsushi/tagbar'
+    Plug 'hushicai/tagbar-javascript.vim'
+    Plug 'Quramy/tsuquyomi'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'skwp/greplace.vim'
 
 call plug#end()
 
 set clipboard^=unnamed,unnamedplus
 
 let g:neosnippet#enable_completed_snippet = 1
+" enable gtags module
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
+
+" config project root markers.
+let g:gutentags_project_root = ['.root']
+
+" generate datebases in my cache directory, prevent gtags files polluting my project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" forbid gutentags adding gtags databases
+let g:gutentags_auto_add_gtags_cscope = 0
+
+set grepprg=ag
+
+let g:grep_cmd_opts = '--line-numbers --noheading'
 
 """" Plugins configuration
 " Deoplete
@@ -232,6 +264,7 @@ nmap <leader>r :syntax sync fromstart<cr>
 nmap <leader>l :CtrlPBuffer<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
+nmap <C-_> :TagbarToggle<cr>
 nmap <C-F> <Plug>CtrlSFPrompt
 nmap <leader>k :BD<CR>
 
