@@ -29,6 +29,9 @@ set completeopt-=preview
 :set ignorecase
 :set smartcase
 
+nnoremap <leader>g <C-]>
+nnoremap <leader>b <C-t>
+
 set nocp
 runtime! plugin/ctrlp.vim
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*/node_modules/*,*/vendor/*,*.exe,*.so,*.dat
@@ -103,6 +106,13 @@ let g:ale_go_gometalinter_options = '
   \ --tests
   \ --vendor
   \ '
+
+
+let g:ale_linters = {
+\   'php': ['php'],
+\}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 
 " Emmet
 imap <C-l> <C-y>,
