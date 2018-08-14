@@ -3,62 +3,67 @@
 """" Plugins installation
 call plug#begin()
 
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-go', { 'do': 'make'}
     Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
     Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+    Plug 'vim-airline/vim-airline-themes'
     Plug 'posva/vim-vue'
-	Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
-	Plug 'dyng/ctrlsf.vim'
-	Plug 'qpkorr/vim-bufkill'
+    Plug 'dyng/ctrlsf.vim'
+    Plug 'qpkorr/vim-bufkill'
     Plug 'kshenoy/vim-signature'
-    Plug 'w0rp/ale'
     Plug 'airblade/vim-gitgutter'
     Plug 'kristijanhusak/vim-hybrid-material'
     Plug 'pangloss/vim-javascript'
     Plug 'jiangmiao/auto-pairs'
-	Plug 'mhartington/oceanic-next'
-	Plug 'terryma/vim-multiple-cursors'
-	Plug 'tpope/vim-surround'
+    Plug 'mhartington/oceanic-next'
+    Plug 'terryma/vim-multiple-cursors'
+    Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-fugitive'
-	Plug 'ekalinin/Dockerfile.vim'
+    Plug 'ekalinin/Dockerfile.vim'
     Plug 'diepm/vim-rest-console'
-	Plug 'skywind3000/gutentags_plus'
+    Plug 'skywind3000/gutentags_plus'
     Plug 'hushicai/tagbar-javascript.vim'
     Plug 'Quramy/tsuquyomi'
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'leafgarland/typescript-vim'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    Plug 'mhartington/deoplete-typescript', { 'do': 'npm install -g typescript', 'for': 'typescript' }
     Plug 'skwp/greplace.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
     Plug 'junegunn/vim-easy-align'
     Plug 'ntpeters/vim-better-whitespace'
-	Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-commentary'
     Plug 'StanAngeloff/php.vim'
     Plug 'stephpy/vim-php-cs-fixer'
-	Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'othree/html5.vim'
     Plug 'othree/yajs.vim'
     "Plug 'Yggdroot/indentLine'
     Plug 'arcticicestudio/nord-vim'
-	Plug 'jacoborus/tender.vim'
+    Plug 'jacoborus/tender.vim'
     Plug 'ayu-theme/ayu-vim'
     Plug 'cocopon/iceberg.vim'
-	Plug 'toothpaste-theme/toothpaste'
+    Plug 'toothpaste-theme/toothpaste'
     Plug 'raphamorim/lucario'
-	Plug 'ajh17/Spacegray.vim'
+    Plug 'ajh17/Spacegray.vim'
     Plug 'gosukiwi/vim-atom-dark'
-	Plug 'morhetz/gruvbox'
-	Plug 'nanotech/jellybeans.vim'
+    Plug 'morhetz/gruvbox'
+    Plug 'nanotech/jellybeans.vim'
     Plug 'rakr/vim-one'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'jelera/vim-javascript-syntax'
+    Plug 'w0rp/ale'
+    Plug 'sbdchd/neoformat'
 
 call plug#end()
 
@@ -82,6 +87,16 @@ set completeopt-=preview
 set ignorecase
 set smartcase
 set grepprg=ag
+
+set list lcs=tab:>·
+
+set tabstop=4       " The width of a TAB is set to 4.
+                    " Still it is a \t. It is just that
+                    " Vim will interpret it to be having
+                    " a width of 4.
+set shiftwidth=4    " Indents will have a width of 4
+set softtabstop=4   " Sets the number of columns for a TAB
+set expandtab       " Expand TABs to spaces
 
 filetype plugin on
 
@@ -108,7 +123,33 @@ let g:oceanic_next_terminal_bold = 0
 let g:oceanic_next_terminal_italic = 1
 let g:airline_theme='one'
 
+" ale
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 0
+let g:ale_linters_explicit = 1
 
+let g:ale_linters = {
+\   'javascript': ['eslint']
+\}
+
+"let g:ale_sign_error = '❌'
+"let g:ale_sign_warning = '❌'
+"hi link ALEErrorSign    Error
+"hi link ALEWarningSign  Warning
+let g:ale_sign_error = "•"
+let g:ale_sign_warning = "•"
+highlight ALEErrorSign ctermfg=9 ctermbg=none guifg=#C30500 guibg=none
+highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+"let g:airline#extensions#ale#enabled = 1
+" ale format
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"let g:ale_set_loclist = 0
+"let g:ale_set_quickfix = 1
+"
 " move through splits
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
@@ -126,13 +167,6 @@ endfunction
 function! ClipboardPaste()
   let @@ = system('xclip -o -selection clipboard')
 endfunction
-
-
-" ale
-let g:ale_linters_explicit = 1
-highlight ALEWarning ctermbg=DarkMagenta
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
 
 " emmet
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
@@ -186,60 +220,14 @@ nmap ga <Plug>(EasyAlign)
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" ale
-let g:go_autodetect_gopath = 1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_lint_on_enter = 0
-let g:ale_lint_on_save = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_set_signs = 1
-let g:ale_sign_column_always = 1
-let g:ale_warn_about_trailing_whitespace = 0
-hi ALEErrorSign   ctermfg=15 ctermbg=236
-hi ALEInfoSign    ctermfg=15 ctermbg=236
-hi ALEWarningSign ctermfg=15 ctermbg=236
-let g:ale_linters = {
-  \ 'go': ['gometalinter'],
-  \ 'php': [ 'php' ]
-  \ }
-let g:ale_go_gometalinter_options = '
-  \ --aggregate
-  \ --disable=gas
-  \ --disable=goconst
-  \ --disable=gocyclo
-  \ --disable=vetshadow
-  \ --disable=gotype
-  \ --enable=misspell
-  \ --enable=unused
-  \ --fast
-  \ --sort=line
-  \ --tests
-  \ --vendor
-  \ '
-
-let g:deoplete#sources#ternjs#filetypes = [ 'vue', 'js', ]
-let g:ale_sign_column_always = 1
-
-let g:deoplete#sources#ternjs#tern_bin = '/home/kaspars/npm/lib/node_modules/tern/bin/tern'
-
-
-
-let ayucolor="mirage"
-
-let g:gruvbox_contrast_dark = 'hard'
-
+"let g:deoplete#sources#ternjs#filetypes = [ 'vue', 'js', ]
+"let g:deoplete#sources#ternjs#tern_bin = '/home/kaspars/npm/lib/node_modules/tern/bin/tern'
 
 let g:neosnippet#enable_completed_snippet = 1
 " enable gtags module
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
-
-" config project root markers.
 let g:gutentags_project_root = ['.root']
-
-" generate datebases in my cache directory, prevent gtags files polluting my project
 let g:gutentags_cache_dir = expand('~/.cache/tags')
-
-" forbid gutentags adding gtags databases
 let g:gutentags_auto_add_gtags_cscope = 0
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
