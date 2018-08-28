@@ -1,4 +1,4 @@
-" Smilga`s Neovim init.vim
+", Smilga`s Neovim init.vim
 "
 """" Plugins installation
 call plug#begin()
@@ -37,6 +37,7 @@ call plug#begin()
     Plug 'leafgarland/typescript-vim'
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     Plug 'mhartington/deoplete-typescript', { 'do': 'npm install -g typescript', 'for': 'typescript' }
+    Plug 'dkprice/vim-easygrep'
     Plug 'skwp/greplace.vim'
     Plug 'ludovicchabant/vim-gutentags'
     Plug 'majutsushi/tagbar'
@@ -65,6 +66,7 @@ call plug#begin()
     Plug 'w0rp/ale'
     Plug 'sbdchd/neoformat'
     Plug 'vim-scripts/AfterColors.vim'
+    Plug 'StanAngeloff/php.vim'
 
 call plug#end()
 
@@ -98,6 +100,7 @@ set tabstop=4       " The width of a TAB is set to 4.
 set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
+set ff=unix
 
 filetype plugin on
 
@@ -130,7 +133,8 @@ let g:ale_completion_enabled = 0
 let g:ale_linters_explicit = 1
 
 let g:ale_linters = {
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'php': ['phan']
 \}
 
 "let g:ale_sign_error = '❌'
@@ -178,7 +182,7 @@ set nocp
 runtime! plugin/ctrlp.vim
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*/node_modules/*,*/vendor/*,*.exe,*.so,*.dat
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\node_modules$\|\.hg$\|\.svn$\|\.yardoc$',
+  \ 'dir':  '\.git$\|\node_modules$\|\.hg$\|\public$\|\.svn$\|\.yardoc$',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 let g:ctrlp_map = '<c-p>'
@@ -231,6 +235,9 @@ let g:go_highlight_build_constraints = 1
 let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 
+" Easy grep
+"let g:EasyGrepFilesToExclude='vendor,node_modules,coverage,*.lock,*.log
+
 " vue vim
 let g:vue_disable_pre_processors = 1
 
@@ -253,3 +260,5 @@ nmap <leader>k :BD<CR>
 "autocmd bufwritepost init.vim source $MYVIMRC
 
 " vim:foldmethod=marker:foldlevel=0
+"
+set diffopt+=vertical
