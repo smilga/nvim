@@ -1,55 +1,43 @@
-", Smilga`s Neovim init.vim
-"
-"""" Plugins installation
+" Smilga`s Neovim init.vim
+
+"""" Plugins
 call plug#begin()
 
+    " General plugins
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-go', { 'do': 'make'}
-    Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-    Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
     Plug 'ctrlpvim/ctrlp.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'posva/vim-vue'
     Plug 'scrooloose/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'dyng/ctrlsf.vim'
     Plug 'qpkorr/vim-bufkill'
     Plug 'kshenoy/vim-signature'
     Plug 'airblade/vim-gitgutter'
-    Plug 'kristijanhusak/vim-hybrid-material'
-    Plug 'pangloss/vim-javascript'
     Plug 'jiangmiao/auto-pairs'
-    Plug 'mhartington/oceanic-next'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-fugitive'
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'diepm/vim-rest-console'
-    Plug 'skywind3000/gutentags_plus'
-    Plug 'hushicai/tagbar-javascript.vim'
-    Plug 'Quramy/tsuquyomi'
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-    Plug 'mhartington/deoplete-typescript', { 'do': 'npm install -g typescript', 'for': 'typescript' }
     Plug 'dkprice/vim-easygrep'
-    Plug 'skwp/greplace.vim'
     Plug 'ludovicchabant/vim-gutentags'
+    Plug 'skywind3000/gutentags_plus'
     Plug 'majutsushi/tagbar'
     Plug 'junegunn/vim-easy-align'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'tpope/vim-commentary'
-    Plug 'StanAngeloff/php.vim'
-    Plug 'stephpy/vim-php-cs-fixer'
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'othree/html5.vim'
-    Plug 'othree/yajs.vim'
-    "Plug 'Yggdroot/indentLine'
+    Plug 'w0rp/ale'
+    Plug 'sbdchd/neoformat'
+    Plug 'bkad/CamelCaseMotion'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+
+    " Themes
+    Plug 'vim-scripts/AfterColors.vim'
     Plug 'arcticicestudio/nord-vim'
     Plug 'jacoborus/tender.vim'
     Plug 'ayu-theme/ayu-vim'
@@ -62,11 +50,20 @@ call plug#begin()
     Plug 'nanotech/jellybeans.vim'
     Plug 'rakr/vim-one'
     Plug 'drewtempelmeyer/palenight.vim'
-    Plug 'jelera/vim-javascript-syntax'
-    Plug 'w0rp/ale'
-    Plug 'sbdchd/neoformat'
-    Plug 'vim-scripts/AfterColors.vim'
-    Plug 'StanAngeloff/php.vim'
+    Plug 'mhartington/oceanic-next'
+
+    " Filetype specific
+    "
+    " Typescript
+    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+
+    " Golang
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+
+    " Vue
+    Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -127,32 +124,34 @@ let g:oceanic_next_terminal_bold = 0
 let g:oceanic_next_terminal_italic = 1
 let g:airline_theme='one'
 
+let g:nvim_typescript#javascript_support = 1
+let g:nvim_typescript#vue_support = 0
+
 " ale
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_linters_explicit = 1
+let g:ale_sign_column_always = 1
 
+" for golang
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'php': ['phan']
+\   'go': ['gometalinter'],
 \}
+let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
 
-"let g:ale_sign_error = '❌'
-"let g:ale_sign_warning = '❌'
-"hi link ALEErrorSign    Error
-"hi link ALEWarningSign  Warning
+
+
+
 let g:ale_sign_error = "•"
 let g:ale_sign_warning = "•"
 highlight ALEErrorSign ctermfg=9 ctermbg=none guifg=#C30500 guibg=none
 highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
-"highlight clear ALEErrorSign
-"highlight clear ALEWarningSign
-"let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 " ale format
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-"let g:ale_set_loclist = 0
+let g:ale_set_loclist = 0
 "let g:ale_set_quickfix = 1
 "
 " move through splits
@@ -205,9 +204,6 @@ nmap ga <Plug>(EasyAlign)
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-"let g:deoplete#sources#ternjs#filetypes = [ 'vue', 'js', ]
-"let g:deoplete#sources#ternjs#tern_bin = '/home/kaspars/npm/lib/node_modules/tern/bin/tern'
-
 let g:neosnippet#enable_completed_snippet = 1
 " enable gtags module
 let g:gutentags_modules = ['ctags', 'gtags_cscope']
@@ -220,8 +216,6 @@ let g:grep_cmd_opts = '--line-numbers --noheading'
 """" Plugins configuration
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
 
 " GO-Vim
 let g:go_fmt_command = "goimports"
@@ -234,6 +228,8 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
+let g:go_metalinter_enabled = []
+let g:go_metalinter_autosave = 0
 
 " Easy grep
 "let g:EasyGrepFilesToExclude='vendor,node_modules,coverage,*.lock,*.log
