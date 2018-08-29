@@ -5,7 +5,6 @@ call plug#begin()
 
     " General plugins
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'ctrlpvim/ctrlp.vim'
     Plug 'Shougo/neosnippet'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'vim-airline/vim-airline'
@@ -128,6 +127,9 @@ let g:airline_theme='one'
 let g:nvim_typescript#javascript_support = 1
 let g:nvim_typescript#vue_support = 0
 
+
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
 " ale
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 0
@@ -177,17 +179,8 @@ endfunction
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
 imap <C-l> <C-y>,
 
-" ctrlp
-set nocp
-runtime! plugin/ctrlp.vim
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*/node_modules/*,*/vendor/*,*.exe,*.so,*.dat
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\node_modules$\|\.hg$\|\public$\|\.svn$\|\.yardoc$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+" fzf
+nmap <C-p> :Files<cr>
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -247,7 +240,7 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>r :syntax sync fromstart<cr>
-nmap <leader>l :CtrlPBuffer<cr>
+nmap <leader>l :Buffers<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
 nmap <C-_> :TagbarToggle<cr>
