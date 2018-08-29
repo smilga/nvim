@@ -52,14 +52,14 @@ call plug#begin()
     Plug 'rakr/vim-one'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'mhartington/oceanic-next'
-    Plug 'Shougo/vimproc.vim'
 
     " Filetype specific
     "
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
-    "Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-    Plug 'Quramy/tsuquyomi'
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    "Plug 'Quramy/tsuquyomi'
+    "Plug 'Shougo/vimproc.vim'
 
     " Golang
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -133,6 +133,9 @@ let g:airline_theme='one'
 let g:nvim_typescript#javascript_support = 1
 let g:nvim_typescript#vue_support = 0
 
+let g:tsuquyomi_javascript_support = 1
+let g:tsuquyomi_use_vimproc=1
+
 
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
@@ -146,7 +149,6 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'go': ['gometalinter'],
 \   'javascript': ['eslint'],
-\   'typescript': ['tsserver'],
 \}
 let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
 
@@ -154,7 +156,6 @@ let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
 
 
-let g:tsuquyomi_use_vimproc=1
 
 
 let g:ale_sign_error = "•"
@@ -261,12 +262,15 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>r :syntax sync fromstart<cr>
-nmap <leader>l :Buffers<cr>
+nmap <leader>l :CtrlPBuffer<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
 nmap <C-_> :TagbarToggle<cr>
 nmap <C-F> <Plug>CtrlSFPrompt
 nmap <leader>k :BD<CR>
+nmap <leader>q :q<CR>
+nmap <leader>s :sp<CR>
+nmap <leader>v :vs<CR>
 
 "autocmd bufwritepost init.vim source $MYVIMRC
 
