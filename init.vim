@@ -32,9 +32,10 @@ call plug#begin()
     Plug 'w0rp/ale'
     Plug 'sbdchd/neoformat'
     Plug 'bkad/CamelCaseMotion'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
+    "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    "Plug 'junegunn/fzf.vim'
     Plug 'pangloss/vim-javascript'
+    Plug 'kien/ctrlp.vim'
 
     " Themes
     Plug 'vim-scripts/AfterColors.vim'
@@ -51,12 +52,14 @@ call plug#begin()
     Plug 'rakr/vim-one'
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'mhartington/oceanic-next'
+    Plug 'Shougo/vimproc.vim'
 
     " Filetype specific
     "
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    "Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    Plug 'Quramy/tsuquyomi'
 
     " Golang
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -64,6 +67,9 @@ call plug#begin()
 
     " Vue
     Plug 'posva/vim-vue'
+
+    " PHP
+    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 call plug#end()
 
@@ -139,10 +145,16 @@ let g:ale_sign_column_always = 1
 " for golang
 let g:ale_linters = {
 \   'go': ['gometalinter'],
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver'],
 \}
 let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
 
+let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
 
+
+let g:tsuquyomi_use_vimproc=1
 
 
 let g:ale_sign_error = "•"
@@ -179,8 +191,17 @@ endfunction
 imap   <S-Tab>   <plug>(emmet-expand-abbr)
 imap <C-l> <C-y>,
 
-" fzf
-nmap <C-p> :Files<cr>
+" ctrlp
+set nocp
+runtime! plugin/ctrlp.vim
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.yardoc/*,*/node_modules/*,*/vendor/*,*.exe,*.so,*.dat
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\node_modules$\|\.hg$\|\.svn$\|\.yardoc$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
 
 " nerdtree
 let NERDTreeShowHidden=1
