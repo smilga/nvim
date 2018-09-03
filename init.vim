@@ -36,6 +36,7 @@ call plug#begin()
     "Plug 'junegunn/fzf.vim'
     Plug 'pangloss/vim-javascript'
     Plug 'kien/ctrlp.vim'
+    Plug 'skwp/greplace.vim'
 
     " Themes
     Plug 'vim-scripts/AfterColors.vim'
@@ -53,6 +54,7 @@ call plug#begin()
     Plug 'drewtempelmeyer/palenight.vim'
     Plug 'mhartington/oceanic-next'
 
+
     " Filetype specific
     "
     " Typescript
@@ -69,7 +71,7 @@ call plug#begin()
     Plug 'posva/vim-vue'
 
     " PHP
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 call plug#end()
 
@@ -137,6 +139,7 @@ let g:tsuquyomi_javascript_support = 1
 let g:tsuquyomi_use_vimproc=1
 
 
+
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " ale
@@ -149,8 +152,21 @@ let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'go': ['gometalinter'],
 \   'javascript': ['eslint'],
+\   'vue': [],
 \}
 let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
+
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\   'json': ['prettier'],
+\   'typescript': ['prettier'],
+\}
+let g:ale_javascript_prettier_use_local_config = 1
+
+" Disable ale for vue
+autocmd BufEnter *.vue ALEDisable
+autocmd BufLeave *.vue ALEEnable
 
 let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
 let g:deoplete#ignore_sources.php = ['omni']
@@ -209,6 +225,9 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
+
+let g:nvim_typescript#max_completion_detail = 10
+
 " nerdcomment
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 
@@ -248,7 +267,8 @@ let g:go_metalinter_enabled = []
 let g:go_metalinter_autosave = 0
 
 " Easy grep
-"let g:EasyGrepFilesToExclude='vendor,node_modules,coverage,*.lock,*.log
+let g:EasyGrepFilesToExclude='vendor,node_modules,public,coverage,*.lock,*.log'
+let g:EasyGrepReplaceWindowMode = 2
 
 " vue vim
 let g:vue_disable_pre_processors = 1
