@@ -14,7 +14,6 @@ call plug#begin()
     Plug 'dyng/ctrlsf.vim'
     Plug 'qpkorr/vim-bufkill'
     Plug 'kshenoy/vim-signature'
-    Plug 'airblade/vim-gitgutter'
     Plug 'jiangmiao/auto-pairs'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'
@@ -72,6 +71,8 @@ call plug#begin()
 
     " PHP
     "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    " HTML
+    Plug 'othree/html5.vim'
 
 call plug#end()
 
@@ -143,7 +144,7 @@ let g:tsuquyomi_use_vimproc=1
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " ale
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 0
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
@@ -247,6 +248,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_auto_add_gtags_cscope = 0
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
+
+let g:node_host_prog = '/home/kaspars/npm/bin/neovim-node-host'
 
 """" Plugins configuration
 " Deoplete
