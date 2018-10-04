@@ -231,6 +231,8 @@ au BufReadPost,BufNewFile *.php let g:pdv_cfg_foldmarker = 0
 let g:phpcd_autoload_path = '.autoload.php'
 let g:php_namespace_sort_after_insert = 1
 
+let g:ale_php_phpstan_executable = './vendor/bin/phpstan'
+
 let g:pdv_template_dir = $HOME ."/.config/nvim/plugged/pdv/templates"
 nnoremap <leader>dx :call pdv#DocumentCurrentLine()<CR>
 
@@ -322,6 +324,9 @@ nmap <leader>v :vs<CR>
 nmap <leader>ff :ALEFix<CR>
 
 "autocmd bufwritepost init.vim source $MYVIMRC
+"
+"MACRO
+let @x = ''
 
 " vim:foldmethod=marker:foldlevel=0
 "
