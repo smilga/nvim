@@ -13,7 +13,6 @@ call plug#begin()
     Plug 'dyng/ctrlsf.vim'
     Plug 'qpkorr/vim-bufkill'
     Plug 'kshenoy/vim-signature'
-    Plug 'airblade/vim-gitgutter'
     Plug 'jiangmiao/auto-pairs'
     Plug 'terryma/vim-multiple-cursors'
     Plug 'tpope/vim-surround'
@@ -80,6 +79,8 @@ call plug#begin()
     Plug 'arnaud-lb/vim-php-namespace'
 
     "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    " HTML
+    Plug 'othree/html5.vim'
 
 call plug#end()
 
@@ -230,6 +231,8 @@ au BufReadPost,BufNewFile *.php let g:pdv_cfg_foldmarker = 0
 let g:phpcd_autoload_path = '.autoload.php'
 let g:php_namespace_sort_after_insert = 1
 
+let g:ale_php_phpstan_executable = './vendor/bin/phpstan'
+
 let g:pdv_template_dir = $HOME ."/.config/nvim/plugged/pdv/templates"
 nnoremap <leader>dx :call pdv#DocumentCurrentLine()<CR>
 
@@ -272,6 +275,8 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_auto_add_gtags_cscope = 0
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
+
+let g:node_host_prog = '/home/kaspars/npm/bin/neovim-node-host'
 
 """" Plugins configuration
 " Deoplete
@@ -319,6 +324,9 @@ nmap <leader>v :vs<CR>
 nmap <leader>ff :ALEFix<CR>
 
 "autocmd bufwritepost init.vim source $MYVIMRC
+"
+"MACRO
+let @x = ''
 
 " vim:foldmethod=marker:foldlevel=0
 "
