@@ -53,6 +53,7 @@ call plug#begin()
     Plug 'mhartington/oceanic-next'
     Plug 'christoomey/vim-sort-motion'
     Plug 'ruanyl/vim-sort-imports'
+    Plug 'smilga/tokyo-metro.vim'
 
 
     " Filetype specific
@@ -132,7 +133,7 @@ if (empty($TMUX))
 endif
 
 syntax enable
-colorscheme one
+colorscheme tokyo-metro
 
 highlight LineNr guifg=#888888 guibg=bg
 let g:hybrid_transparent_background = 1
@@ -170,6 +171,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
+\   'php': ['php_cs_fixer'],
 \   'typescript': ['prettier'],
 \}
 let g:ale_javascript_prettier_use_local_config = 1
