@@ -1,4 +1,3 @@
-" Smilga`s Neovim init.vim
 
 """" Plugins
 call plug#begin()
@@ -18,11 +17,12 @@ call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'mattn/emmet-vim'
     Plug 'tpope/vim-fugitive'
+    Plug 'gregsexton/gitv', {'on': ['Gitv']}
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'diepm/vim-rest-console'
     Plug 'dkprice/vim-easygrep'
-    Plug 'ludovicchabant/vim-gutentags'
-    Plug 'skywind3000/gutentags_plus'
+    Plug 'xolox/vim-easytags'
+    Plug 'xolox/vim-misc'
     Plug 'majutsushi/tagbar'
     Plug 'junegunn/vim-easy-align'
     Plug 'ntpeters/vim-better-whitespace'
@@ -270,11 +270,11 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 let g:neosnippet#enable_completed_snippet = 1
-" enable gtags module
-let g:gutentags_modules = ['ctags', 'gtags_cscope']
-let g:gutentags_project_root = ['.root']
-let g:gutentags_cache_dir = expand('~/.cache/tags')
-let g:gutentags_auto_add_gtags_cscope = 0
+" Tags
+let g:easytags_file = './tags'
+let g:easytags_async = 1
+let g:easytags_auto_highlight = 0
+
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
