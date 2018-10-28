@@ -35,6 +35,8 @@ call plug#begin()
     Plug 'pangloss/vim-javascript'
     Plug 'kien/ctrlp.vim'
     Plug 'skwp/greplace.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/goyo.vim'
 
     " Themes
     Plug 'vim-scripts/AfterColors.vim'
@@ -117,6 +119,7 @@ set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set ff=unix
 
+
 filetype plugin on
 
 if (empty($TMUX))
@@ -186,9 +189,25 @@ let g:deoplete#ignore_sources.php = ['omni']
 "let g:import_sort_auto = 1
 
 " Neo snippet keys
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 let g:ale_sign_error = "•"
 let g:ale_sign_warning = "•"
@@ -238,6 +257,8 @@ let g:ale_php_phpstan_executable = './vendor/bin/phpstan'
 let g:pdv_template_dir = $HOME ."/.config/nvim/plugged/pdv/templates"
 nnoremap <leader>dx :call pdv#DocumentCurrentLine()<CR>
 
+autocmd FileType php noremap <Leader>i :call PhpInsertUse()<CR>
+
 " ctrlp
 set nocp
 runtime! plugin/ctrlp.vim
@@ -249,6 +270,19 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
+
+" fzf
+let g:fzf_action = {
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -278,7 +312,7 @@ let g:easytags_auto_highlight = 0
 
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
-let g:node_host_prog = '/home/kaspars/npm/bin/neovim-node-host'
+let g:node_host_prog = '/home/maxtraffic/npm/bin/neovim-node-host'
 
 """" Plugins configuration
 " Deoplete
@@ -324,6 +358,7 @@ nmap <leader>q :q<CR>
 nmap <leader>s :sp<CR>
 nmap <leader>v :vs<CR>
 nmap <leader>ff :ALEFix<CR>
+nmap <leader>i :call PhpInsertUse()<CR>
 
 "autocmd bufwritepost init.vim source $MYVIMRC
 "
