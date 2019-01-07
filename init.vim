@@ -32,11 +32,13 @@ call plug#begin()
     Plug 'bkad/CamelCaseMotion'
     "Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     "Plug 'junegunn/fzf.vim'
+    Plug 'isRuslan/vim-es6'
     Plug 'pangloss/vim-javascript'
     Plug 'kien/ctrlp.vim'
     Plug 'skwp/greplace.vim'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/goyo.vim'
+    Plug 'jremmen/vim-ripgrep'
 
     " Themes
     Plug 'vim-scripts/AfterColors.vim'
@@ -85,6 +87,8 @@ call plug#begin()
     " HTML
     Plug 'othree/html5.vim'
 
+    Plug 'johngrib/vim-game-snake'
+
 call plug#end()
 
 set nocompatible
@@ -118,6 +122,7 @@ set shiftwidth=4    " Indents will have a width of 4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set ff=unix
+
 
 
 filetype plugin on
@@ -310,6 +315,7 @@ let g:easytags_async = 1
 let g:easytags_auto_highlight = 0
 
 
+set grepprg=ag
 let g:grep_cmd_opts = '--line-numbers --noheading'
 
 let g:node_host_prog = '/home/maxtraffic/npm/bin/neovim-node-host'
@@ -359,11 +365,13 @@ nmap <leader>s :sp<CR>
 nmap <leader>v :vs<CR>
 nmap <leader>ff :ALEFix<CR>
 nmap <leader>i :call PhpInsertUse()<CR>
+nmap <leader>go :Goyo<CR>
 
 "autocmd bufwritepost init.vim source $MYVIMRC
 "
 "MACRO
 let @x = ''
+let g:vim_json_syntax_conceal = 0
 
 " vim:foldmethod=marker:foldlevel=0
 "
