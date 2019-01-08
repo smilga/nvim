@@ -90,7 +90,7 @@ let g:pdv_template_dir = $HOME ."/.config/nvim/plugged/pdv/templates"
 
 " Typescript
 let g:nvim_typescript#javascript_support = 1
-let g:nvim_typescript#vue_support = 1
+let g:nvim_typescript#vue_support = 0
 let g:nvim_typescript#max_completion_detail = 10
 
 " Vue vim
@@ -109,3 +109,15 @@ let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 let g:go_metalinter_enabled = []
 let g:go_metalinter_autosave = 0
+
+" Lightline
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }

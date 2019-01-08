@@ -46,6 +46,13 @@ call plug#begin()
     Plug 'w0rp/ale'
     " Autocomplete
     Plug 'Valloric/YouCompleteMe', { 'dir': '~/.config/nvim/plugged/YouCompleteMe', 'do': './install --go-completer --ts-completer' }
+    " Quick fix buffer edit
+    Plug 'stefandtw/quickfix-reflector.vim'
+    " Highlights ex commands
+    Plug 'markonm/traces.vim'
+    " Show vim history
+    Plug 'junegunn/gv.vim'
+
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
@@ -66,8 +73,9 @@ call plug#begin()
     Plug 'ekalinin/Dockerfile.vim'
     " Themes
     Plug 'smilga/tokyo-metro.vim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'itchyny/lightline.vim'
+    Plug 'maximbaz/lightline-ale'
+    Plug 'NovaDev94/lightline-onedark'
     " Fun
     Plug 'johngrib/vim-game-snake'
 

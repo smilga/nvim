@@ -23,6 +23,7 @@ set completeopt-=preview
 set ignorecase
 set smartcase
 set grepprg=ag
+set conceallevel=0 " dont hide quotes in json
 
 set list lcs=tab:>·
 
