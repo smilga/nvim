@@ -38,7 +38,7 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <leader>c :call NERDComment(0,"toggle")<CR>
 
 " Emmet
-imap   <S-Tab>   <plug>(emmet-expand-abbr)
+imap <expr> <S-Tab>   emmet#expandAbbrIntelligent("\<tab>")
 imap <C-l> <C-y>,
 
 " Neosnippet
