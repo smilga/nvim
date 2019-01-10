@@ -44,8 +44,12 @@ call plug#begin()
     Plug 'jremmen/vim-ripgrep'
     " Linting
     Plug 'w0rp/ale'
+    " Python
+    Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'Valloric/YouCompleteMe', { 'dir': '~/.config/nvim/plugged/YouCompleteMe', 'do': './install --go-completer --ts-completer' }
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'zchee/deoplete-go', { 'do': 'make'}
+    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
     " Highlights ex commands
