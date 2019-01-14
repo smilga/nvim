@@ -1,7 +1,7 @@
 " Ale
 let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 0
-let g:ale_linters_explicit = 1
+            "let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = "•"
 let g:ale_sign_warning = "•"
@@ -19,7 +19,7 @@ let g:ale_fixers = {
 \}
 " go
 let g:ale_linters = {
-\   'go': ['gometalinter'],
+\   'golang': ['golangcli-lint'],
 \   'javascript': ['eslint'],
 \   'php': ['phpstan'],
 \   'vue': [],
@@ -32,7 +32,7 @@ highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
 let g:airline#extensions#ale#enabled = 1
 " Disable ale for vue
 autocmd BufEnter *.vue ALEDisable
-autocmd BufLeave *.vue ALEEnable
+"autocmd BufLeave *.vue ALEEnable
 
 " Neosnippet
 let g:neosnippet#enable_completed_snippet = 1
@@ -53,7 +53,7 @@ let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
 " fzf
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
       \ 'ctrl-v': 'vsplit'
@@ -128,7 +128,7 @@ set completeopt+=noselect
 let g:deoplete#enable_at_startup = 1
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#gocode_binary = '/home/kaspars/go/bin/gocode'
 let g:deoplete#sources#go#pointer = 1
 let g:deoplete#sources#go#unimported_packages = 1
 

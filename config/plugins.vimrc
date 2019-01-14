@@ -49,6 +49,7 @@ call plug#begin()
     " Autocomplete
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-go', { 'do': 'make'}
+    " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
@@ -56,6 +57,7 @@ call plug#begin()
     Plug 'markonm/traces.vim'
     " Show vim history
     Plug 'junegunn/gv.vim'
+    Plug 'neovim/node-host'
 
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
