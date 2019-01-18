@@ -49,8 +49,6 @@ call plug#begin()
     " Autocomplete
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'zchee/deoplete-go', { 'do': 'make'}
-    " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
     " Highlights ex commands
@@ -69,18 +67,21 @@ call plug#begin()
     " Vue
     Plug 'posva/vim-vue'
     " PHP
-    Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-    Plug 'spf13/PIV'
+    "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
+    "Plug 'spf13/PIV'
     Plug 'arnaud-lb/vim-php-namespace'
+    " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
+    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " JS
     Plug 'isRuslan/vim-es6'
     Plug 'pangloss/vim-javascript'
     " Dockerfile
     Plug 'ekalinin/Dockerfile.vim'
-    " Themes
-    Plug 'smilga/tokyo-metro.vim'
+    " Line
     Plug 'itchyny/lightline.vim'
     Plug 'maximbaz/lightline-ale'
+    " Themes
+    Plug 'smilga/tokyo-metro.vim'
     Plug 'NovaDev94/lightline-onedark'
     " Fun
     Plug 'johngrib/vim-game-snake'
