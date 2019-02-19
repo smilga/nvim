@@ -22,8 +22,7 @@ call plug#begin()
     " Git wrapper
     Plug 'tpope/vim-fugitive'
     " Tags
-    Plug 'xolox/vim-misc'
-    Plug 'xolox/vim-easytags'
+    Plug 'ludovicchabant/vim-gutentags'
     " Show tags at right side window
     Plug 'majutsushi/tagbar'
     " Align selection

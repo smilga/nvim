@@ -1,7 +1,7 @@
 " Ale
 let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 0
-            "let g:ale_linters_explicit = 1
+"let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = "•"
 let g:ale_sign_warning = "•"
@@ -13,6 +13,7 @@ let g:ale_set_loclist = 0
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['prettier'],
+\   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'php': ['php_cs_fixer'],
 \   'typescript': ['prettier'],
@@ -20,8 +21,8 @@ let g:ale_fixers = {
 " go
 let g:ale_linters = {
 \   'golang': ['golangcli-lint'],
-\   'javascript': ['eslint'],
 \   'php': ['phpstan'],
+\   'yaml': ['yamllint'],
 \   'vue': [],
 \}
 let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimple --enable=unused'
