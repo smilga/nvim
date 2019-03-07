@@ -6,3 +6,14 @@ abbr <?php declare(strict_types=1)
     {
         ${2}
     }
+
+snippet class with constructor
+abbr class __construct
+    class ${1:className}
+    {
+        private ${2}
+
+        public function __construct(
+        ) {
+        }
+    }

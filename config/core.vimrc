@@ -47,3 +47,5 @@ endfunction
 " Go tabs
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 "autocmd FileType go nmap <buffer> <leader>g :GoDef<cr>
+"
+autocmd BufWritePre,BufRead *.php :UnusedImports
