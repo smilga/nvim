@@ -1,3 +1,4 @@
+source $HOME/.config/nvim/config/install-plugin-deps.vimrc
 source $HOME/.config/nvim/config/plugins.vimrc
 source $HOME/.config/nvim/config/core.vimrc
 source $HOME/.config/nvim/config/keys.vimrc

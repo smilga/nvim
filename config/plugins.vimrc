@@ -43,7 +43,7 @@ call plug#begin()
     " Grep tool - super fast
     Plug 'jremmen/vim-ripgrep'
     " Linting
-    Plug 'w0rp/ale'
+    Plug 'w0rp/ale', { 'do': function('InstallPluginDependencies') }
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
