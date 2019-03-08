@@ -14,7 +14,7 @@ highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
+\   'javascript': [],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'php': ['php_cs_fixer'],

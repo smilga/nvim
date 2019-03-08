@@ -21,6 +21,7 @@ call plug#begin()
     Plug 'mattn/emmet-vim'
     " Git wrapper
     Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
     " Tags
     Plug 'ludovicchabant/vim-gutentags'
     " Show tags at right side window
