@@ -35,10 +35,7 @@ let g:ale_go_gometalinter_options = '--fast --enable=staticcheck --enable=gosimp
 " https://github.com/FriendsOfPHP/PHP-CS-Fixer
 let g:ale_php_cs_fixer_options = '--rules=@Symfony,no_unused_imports,declare_strict_types,ordered_imports'
 
-let g:ale_php_phpstan_executable = './vendor/phpstan/phpstan/bin/phpstan'
 let g:ale_php_phpstan_level = 'max'
-
-let g:ale_php_phpmd_executable = './vendor/phpmd/phpmd/src/bin/phpmd'
 
 " JS
 let g:ale_javascript_prettier_use_local_config = 1
