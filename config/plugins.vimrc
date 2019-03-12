@@ -83,6 +83,7 @@ call plug#begin()
     " Themes
     Plug 'smilga/tokyo-metro.vim'
     Plug 'NovaDev94/lightline-onedark'
+    Plug 'NLKNguyen/papercolor-theme'
     " Fun
     Plug 'johngrib/vim-game-snake'
 
