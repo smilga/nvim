@@ -55,3 +55,7 @@ map <silent> e <Plug>CamelCaseMotion_e
 " Php
 nnoremap <leader>dx :call pdv#DocumentCurrentLine()<CR>
 autocmd FileType php noremap <Leader>i :call PhpInsertUse()<CR>
+
+" Ale
+nmap <space>j :ALENext<cr>
+nmap <space>k :ALEPrevious<cr>
