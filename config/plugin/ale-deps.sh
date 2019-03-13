@@ -7,4 +7,4 @@ composer global require phpstan/phpstan
 composer global require phpmd/phpmd
 
 #GO
-curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s v1.15.0
+curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.15.0
