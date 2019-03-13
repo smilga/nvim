@@ -14,18 +14,20 @@ highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': [],
+\   'javascript': ['eslint'],
 \   'yaml': ['prettier'],
 \   'json': ['prettier'],
 \   'php': ['php_cs_fixer'],
-\   'typescript': ['prettier'],
+\   'typescript': ['eslint'],
+\   'vue': ['eslint'],
 \}
 
 let g:ale_linters = {
+\   'javascript': ['eslint'],
 \   'go': ['golangci-lint'],
 \   'php': ['phpstan', 'phpmd', 'phpcs'],
 \   'yaml': ['yamllint'],
-\   'vue': [],
+\   'vue': ['eslint'],
 \}
 
 " https://github.com/FriendsOfPHP/PHP-CS-Fixer
