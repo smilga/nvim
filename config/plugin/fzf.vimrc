@@ -9,3 +9,6 @@ augroup fzf
   autocmd  FileType fzf set laststatus=0 noshowmode noruler
     \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
+
+let g:fzf_buffers_jump = 1
+let g:fzf_tags_command = 'ctags -R'

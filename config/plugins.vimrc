@@ -34,10 +34,9 @@ call plug#begin()
     Plug 'tpope/vim-commentary'
     " Camelcase and sneakcase words navigation
     Plug 'bkad/CamelCaseMotion'
-    " Find file
-    Plug 'kien/ctrlp.vim'
     " Fuzzy finder
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
     " Distraction free mode
     Plug 'junegunn/goyo.vim'
     " Grep tool - super fast
