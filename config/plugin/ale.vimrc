@@ -40,6 +40,7 @@ let g:ale_php_cs_fixer_options = '--rules=@Symfony,no_unused_imports,declare_str
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = '--fast'
 
+let g:ale_php_phpstan_configuration = 'phpstan.neon'
 let g:ale_php_phpstan_level = 'max'
 
 " JS

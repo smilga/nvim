@@ -68,6 +68,7 @@ call plug#begin()
     " PHP
     "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     "Plug 'spf13/PIV'
+    Plug 'noahfrederick/vim-composer'
     Plug 'arnaud-lb/vim-php-namespace'
     " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
     Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
