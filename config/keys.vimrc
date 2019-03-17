@@ -59,3 +59,6 @@ autocmd FileType php noremap <Leader>i :call PhpInsertUse()<CR>
 " Ale
 nmap <space>j :ALENext<cr>
 nmap <space>k :ALEPrevious<cr>
+
+" Custom
+nmap <space>uu :call UUID()<cr>
