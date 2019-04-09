@@ -3,7 +3,6 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>r :syntax sync fromstart<cr>
-nmap <leader>l :CtrlPBuffer<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
 nmap <C-_> :TagbarToggle<cr>
@@ -29,6 +28,7 @@ nnoremap <silent> p :call ClipboardPaste()<cr>p
 
 " Fzf
 nnoremap <c-p> :FZF<cr>
+nmap <leader>l :Buffer<cr>
 
 " Easy align
 xmap ga <Plug>(EasyAlign)
