@@ -46,8 +46,9 @@ call plug#begin()
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-go', { 'do': 'make'}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    "Plug 'zchee/deoplete-go', { 'do': 'make'}
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
     " Highlights ex commands
@@ -66,12 +67,11 @@ call plug#begin()
     " Vue
     Plug 'posva/vim-vue'
     " PHP
+    Plug 'jwalton512/vim-blade'
     "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     "Plug 'spf13/PIV'
     Plug 'noahfrederick/vim-composer'
     Plug 'arnaud-lb/vim-php-namespace'
-    " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " JS
     Plug 'isRuslan/vim-es6'
     Plug 'pangloss/vim-javascript'

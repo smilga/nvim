@@ -3,7 +3,7 @@ let mapleader=","
 nmap <leader>w :w<CR>
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 nmap <leader>r :syntax sync fromstart<cr>
-nmap <leader>l :CtrlPBuffer<cr>
+nmap <leader>l :Buffer<cr>
 nmap <Leader><space> :nohlsearch<cr>
 nmap <C-\> :NERDTreeToggle<cr>
 nmap <C-_> :TagbarToggle<cr>
