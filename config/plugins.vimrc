@@ -46,8 +46,9 @@ call plug#begin()
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'zchee/deoplete-go', { 'do': 'make'}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    "Plug 'zchee/deoplete-go', { 'do': 'make'}
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
     " Highlights ex commands
