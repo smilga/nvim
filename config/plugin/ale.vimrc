@@ -18,7 +18,6 @@ highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'yaml': [''],
 \   'json': ['prettier'],
 \   'php': ['php_cs_fixer'],
 \   'typescript': ['eslint'],
@@ -29,7 +28,6 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'go': ['golangci-lint'],
 \   'php': ['phpstan'],
-\   'yaml': ['yamllint'],
 \   'vue': ['eslint'],
 \}
 
