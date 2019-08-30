@@ -1,4 +1,4 @@
-syntax enable
+    syntax enable
 colorscheme tokyo-metro
 filetype plugin on
 
@@ -47,8 +47,27 @@ endfunction
 " Go tabs
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 "autocmd FileType go nmap <buffer> <leader>g :GoDef<cr>
-"
-autocmd BufWritePre,BufRead *.php :UnusedImports
+"Disable unused imports because highlight does not go away
+"autocmd BufWritePre,BufRead *.php :UnusedImports
 
 " Reload file
 au FocusGained,BufEnter * :silent! !
+set statusline+=%{gutentags#statusline()}
+
+" Set tags folder into user space
+let s:vim_tags = expand('~/.cache/tags')
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+
+let g:gutentags_cache_dir = s:vim_tags
+let g:gutentags_ctags_tagfile = '.tags'
+set tags=./.tags;,.tags
+
+let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+" Specifies a directory in which to create all the tags files
+let g:gutentags_cache_dir = s:vim_tags
+
+let g:gutentags_auto_add_gtags_cscope = 0

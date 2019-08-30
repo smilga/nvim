@@ -73,7 +73,7 @@ call plug#begin()
     Plug 'arnaud-lb/vim-php-namespace'
     Plug 'jwalton512/vim-blade'
     " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
-    Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+    "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " JS
     Plug 'isRuslan/vim-es6'
     Plug 'pangloss/vim-javascript'
