@@ -36,7 +36,7 @@ let g:ale_linters = {
 " https://github.com/FriendsOfPHP/PHP-CS-Fixer
 let g:ale_php_phpcs_use_global = 1
 let g:ale_php_cs_fixer_use_global = 1
-"let g:ale_php_cs_fixer_options = '--rules=@Symfony,no_unused_imports,declare_strict_types,ordered_imports'
+
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = '--fast'
 
