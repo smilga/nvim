@@ -88,5 +88,7 @@ call plug#begin()
     Plug 'NLKNguyen/papercolor-theme'
     " Fun
     Plug 'johngrib/vim-game-snake'
+    " Dart
+    Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()
