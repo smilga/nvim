@@ -23,6 +23,7 @@ let g:ale_fixers = {
 \   'php': ['php_cs_fixer'],
 \   'typescript': ['eslint'],
 \   'vue': ['eslint'],
+\   'dart': ['dartfmt'],
 \}
 
 let g:ale_linters = {
@@ -31,6 +32,7 @@ let g:ale_linters = {
 \   'php': ['phpstan'],
 \   'yaml': ['yamllint'],
 \   'vue': ['eslint'],
+\   'dart': ['dartanalyzer'],
 \}
 
 " https://github.com/FriendsOfPHP/PHP-CS-Fixer
@@ -46,5 +48,5 @@ let g:ale_php_phpstan_level = 'max'
 " JS
 let g:ale_javascript_prettier_use_local_config = 1
 " VUE
-autocmd BufEnter *.vue ALEDisable
+"autocmd BufEnter *.vue ALEDisable
 "autocmd BufLeave *.vue ALEEnable

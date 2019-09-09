@@ -1,1 +1,1 @@
-autocmd BufWritePre * :DartFmt
+"autocmd BufWritePre <buffer> :DartFmt
