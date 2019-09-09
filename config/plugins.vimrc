@@ -46,7 +46,7 @@ call plug#begin()
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
     "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     "Plug 'zchee/deoplete-go', { 'do': 'make'}
     " Quick fix buffer edit
@@ -89,6 +89,6 @@ call plug#begin()
     " Fun
     Plug 'johngrib/vim-game-snake'
     " Dart
-    Plug 'dart-lang/dart-vim-plugin'
+    "Plug 'dart-lang/dart-vim-plugin'
 
 call plug#end()

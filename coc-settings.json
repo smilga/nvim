@@ -24,5 +24,6 @@
             "disableDynamicRegister": true,
             "trace.server": "verbose"
         }
-    }
+    },
+    "coc.preferences.diagnostic.displayByAle": true
 }

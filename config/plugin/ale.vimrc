@@ -5,7 +5,7 @@ let g:ale_lint_on_save = 1
 let g:ale_completion_enabled = 0
 let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
-let g:ale_sign_error = "•"
+let g:ale_sign_error = "✘"
 let g:ale_sign_warning = "•"
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -22,6 +22,7 @@ let g:ale_fixers = {
 \   'php': ['php_cs_fixer'],
 \   'typescript': ['eslint'],
 \   'vue': ['eslint'],
+\   'dart': ['dartfmt'],
 \}
 
 let g:ale_linters = {
@@ -29,6 +30,7 @@ let g:ale_linters = {
 \   'go': ['golangci-lint'],
 \   'php': ['phpstan'],
 \   'vue': ['eslint'],
+\   'dart': ['dartanalyzer'],
 \}
 
 " https://github.com/FriendsOfPHP/PHP-CS-Fixer
@@ -44,5 +46,5 @@ let g:ale_php_phpstan_level = 'max'
 " JS
 let g:ale_javascript_prettier_use_local_config = 1
 " VUE
-autocmd BufEnter *.vue ALEDisable
+"autocmd BufEnter *.vue ALEDisable
 "autocmd BufLeave *.vue ALEEnable
