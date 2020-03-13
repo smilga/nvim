@@ -23,6 +23,7 @@ let g:ale_fixers = {
 \   'typescript': ['eslint'],
 \   'vue': ['eslint'],
 \   'dart': ['dartfmt'],
+\   'c': ['clang-format'],
 \}
 
 let g:ale_linters = {

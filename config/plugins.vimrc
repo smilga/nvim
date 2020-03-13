@@ -59,7 +59,7 @@ call plug#begin()
 
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+    "Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     " Golang
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Html

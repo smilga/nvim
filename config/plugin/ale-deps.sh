@@ -14,3 +14,8 @@ npm install -g eslint
 npm install -g prettier eslint-plugin-prettier
 npm install -g eslint-plugin-vue
 npm install -g babel-eslint
+
+# Clang
+npm install -g clang-format
+apt-get install clang-tools-8
+update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-8 100
