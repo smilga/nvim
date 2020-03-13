@@ -57,9 +57,6 @@ call plug#begin()
     Plug 'junegunn/gv.vim'
     Plug 'neovim/node-host'
 
-    " Typescript
-    Plug 'HerringtonDarkholme/yats.vim'
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
     " Golang
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Html
