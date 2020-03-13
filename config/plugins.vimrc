@@ -80,8 +80,8 @@ call plug#begin()
     " Dockerfile
     Plug 'ekalinin/Dockerfile.vim'
     " Line
-    Plug 'itchyny/lightline.vim'
-    Plug 'maximbaz/lightline-ale'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
     " Themes
     Plug 'smilga/tokyo-metro.vim'
     Plug 'NovaDev94/lightline-onedark'
@@ -90,5 +90,12 @@ call plug#begin()
     Plug 'johngrib/vim-game-snake'
     " Dart
     "Plug 'dart-lang/dart-vim-plugin'
+    " Test
+    Plug 'janko/vim-test'
+    " Time tracker
+    Plug 'git-time-metric/gtm-vim-plugin'
+    " Markdonw
+    Plug 'godlygeek/tabular'
+    Plug 'plasticboy/vim-markdown'
 
-call plug#end()
+    call plug#end()
