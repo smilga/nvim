@@ -1,4 +1,6 @@
 # My neovim configuration
+## Coc extensions to install
+- coc-phpls
 ## Useful shortkeys provided by editor and plugins
 ##### vim-gitgutter
 | Key        | Meaning    |
