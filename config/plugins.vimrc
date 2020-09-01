@@ -97,5 +97,6 @@ call plug#begin()
     " Markdonw
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
+    Plug 'stephpy/vim-yaml'
 
     call plug#end()
