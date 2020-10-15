@@ -99,5 +99,6 @@ call plug#begin()
     Plug 'plasticboy/vim-markdown'
     Plug 'mattn/vim-goimports'
     Plug 'nikvdp/ejs-syntax'
+    Plug 'stephpy/vim-yaml'
 
     call plug#end()
