@@ -23,7 +23,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
     Plug 'airblade/vim-gitgutter'
     " Tags
-    Plug 'ludovicchabant/vim-gutentags'
+    "Plug 'ludovicchabant/vim-gutentags'
     " Show tags at right side window
     Plug 'majutsushi/tagbar'
     " Align selection
@@ -60,8 +60,6 @@ call plug#begin()
     " Typescript
     Plug 'HerringtonDarkholme/yats.vim'
     "Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-    " Golang
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " Html
     Plug 'othree/html5.vim'
     " Vue
@@ -82,10 +80,12 @@ call plug#begin()
     " Line
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'ayu-theme/ayu-vim'
     " Themes
     Plug 'smilga/tokyo-metro.vim'
     Plug 'NovaDev94/lightline-onedark'
     Plug 'NLKNguyen/papercolor-theme'
+    Plug 'rakr/vim-one'
     " Fun
     Plug 'johngrib/vim-game-snake'
     " Dart
@@ -97,5 +97,7 @@ call plug#begin()
     " Markdonw
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
+    Plug 'mattn/vim-goimports'
+    Plug 'nikvdp/ejs-syntax'
 
     call plug#end()

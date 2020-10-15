@@ -1,1 +1,1 @@
-let g:gutentags_cache_dir='/home/smilga/.tags_cache/'
+let g:gutentags_cache_dir='/home/kaspars/.tags_cache/'

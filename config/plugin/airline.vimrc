@@ -1,4 +1,4 @@
-let g:airline_theme='deus'
+let g:airline_theme='one'
 let g:gtm_plugin_status_enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 set statusline=%{exists('*GTMStatusline')?'['.GTMStatusline().']':''}\ %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
