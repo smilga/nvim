@@ -28,7 +28,7 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['golangci-lint'],
+\   'go': ['golangci-lint', 'gopls'],
 \   'php': ['phpstan'],
 \   'vue': ['eslint'],
 \   'dart': ['dartanalyzer'],
@@ -38,8 +38,7 @@ let g:ale_linters = {
 let g:ale_php_phpcs_use_global = 1
 let g:ale_php_cs_fixer_use_global = 1
 
-let g:ale_go_golangci_lint_package = 1
-let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_golangci_lint_package = 0
 
 let g:ale_php_phpstan_configuration = 'phpstan.neon'
 let g:ale_php_phpstan_level = 'max'

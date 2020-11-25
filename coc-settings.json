@@ -29,6 +29,17 @@
         ".hg/"
       ],
       "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+    "golang": {
+      "command": "/home/kaspars/go/bin/gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true,
+        "completeUnimported": true,
+        "staticcheck": true,
+        "experimentalWorkspaceModule": true
+      }
     }
   },
   "diagnostic.displayByAle": true,
@@ -38,9 +49,5 @@
     ".hg",
     ".projections.json"
   ],
-  "go": {
-    "goplsOptions": {
-      "completeUnimported": true
-    }
-  }
+  "coc.preferences.hoverTarget": "float"
 }
