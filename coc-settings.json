@@ -1,29 +1,46 @@
 {
-    "languageserver": {
-        "intelephense": {
-            "command": "intelephense",
-            "args": ["--stdio"],
-            "filetypes": ["php"],
-            "initializationOptions": {
-                "storagePath": "/tmp/intelephense"
-            }
-        },
-        "dart": {
-            "command": "dart",
-            "args": [
-                "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
-                "--lsp"
-            ],
-            "filetypes": ["dart"],
-            "disableDynamicRegister": true,
-            "trace.server": "verbose"
-        },
-        "clangd": {
-            "command": "clangd",
-            "args": ["--background-index"],
-            "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["c", "cpp", "objc", "objcpp"]
-        }
+  "languageserver": {
+    "intelephense": {
+      "command": "intelephense",
+      "args": ["--stdio"],
+      "filetypes": ["php"],
+      "initializationOptions": {
+        "storagePath": "/tmp/intelephense"
+      }
     },
-    "coc.preferences.diagnostic.displayByAle": true
+    "dart": {
+      "command": "dart",
+      "args": [
+        "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
+        "--lsp"
+      ],
+      "filetypes": ["dart"],
+      "disableDynamicRegister": true,
+      "trace.server": "verbose"
+    },
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index"],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
+  },
+  "diagnostic.displayByAle": true,
+  "coc.preferences.rootPatterns": [
+    "go.mod",
+    ".git",
+    ".hg",
+    ".projections.json"
+  ],
+  "go": {
+    "goplsOptions": {
+      "completeUnimported": true
+    }
+  }
 }

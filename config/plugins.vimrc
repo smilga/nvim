@@ -100,5 +100,7 @@ call plug#begin()
     Plug 'mattn/vim-goimports'
     Plug 'nikvdp/ejs-syntax'
     Plug 'stephpy/vim-yaml'
+    Plug 'neoclide/coc-snippets'
+    Plug 'airblade/vim-rooter'
 
     call plug#end()

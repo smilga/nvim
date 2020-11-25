@@ -92,3 +92,5 @@ let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 let g:gutentags_cache_dir = s:vim_tags
 
 let g:gutentags_auto_add_gtags_cscope = 0
+
+autocmd FileType go let b:coc_root_patterns = ['go.mod', '.git']
