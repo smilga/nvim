@@ -51,5 +51,6 @@
     "javascriptreact"
   ],
   "eslint.trace.server": "verbose",
-  "intelephense.licenceKey": ""
+  "intelephense.licenceKey": "",
+  "npm.binPath": "npm"
 }
