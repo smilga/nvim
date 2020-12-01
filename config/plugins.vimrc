@@ -46,7 +46,7 @@ call plug#begin()
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'neoclide/coc.nvim', {'do': 'npm install'}
+    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm install'}
     "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     "Plug 'zchee/deoplete-go', { 'do': 'make'}
     " Quick fix buffer edit
