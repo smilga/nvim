@@ -43,11 +43,13 @@
     }
   },
   "diagnostic.displayByAle": true,
-  "coc.preferences.rootPatterns": [
-    "go.mod",
-    ".git",
-    ".hg",
-    ".projections.json"
+  "coc.preferences.hoverTarget": "float",
+  "eslint.filetypes": [
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact"
   ],
-  "coc.preferences.hoverTarget": "float"
+  "eslint.trace.server": "verbose",
+  "intelephense.licenceKey": ""
 }
