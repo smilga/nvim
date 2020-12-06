@@ -1,13 +1,5 @@
 {
   "languageserver": {
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php"],
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      }
-    },
     "dart": {
       "command": "dart",
       "args": [
@@ -42,7 +34,6 @@
       }
     }
   },
-  "diagnostic.displayByAle": true,
   "coc.preferences.hoverTarget": "float",
   "eslint.filetypes": [
     "javascript",
@@ -51,6 +42,20 @@
     "javascriptreact"
   ],
   "eslint.trace.server": "verbose",
+  "npm.binPath": "npm",
   "intelephense.licenceKey": "",
-  "npm.binPath": "npm"
+  "cSpell.userWords": [
+    "Laravel",
+    "Phpunit",
+    "Tymon",
+    "Unimported",
+    "Unprocessable",
+    "gopls",
+    "kaspars",
+    "maxtraffic",
+    "mixins",
+    "staticcheck",
+    "webpush"
+  ],
+  "diagnostic.displayByAle": true
 }

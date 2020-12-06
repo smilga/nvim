@@ -1,9 +1,8 @@
 let g:ale_fix_on_save = 1
-let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_text_changed = 1
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 let g:ale_completion_enabled = 0
-let g:ale_linters_explicit = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = "✘"
 let g:ale_sign_warning = "•"
@@ -29,7 +28,6 @@ let g:ale_fixers = {
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'go': ['golangci-lint', 'gopls'],
-\   'php': ['phpstan'],
 \   'vue': ['eslint'],
 \   'dart': ['dartanalyzer'],
 \}
@@ -48,3 +46,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 " VUE
 "autocmd BufEnter *.vue ALEDisable
 "autocmd BufLeave *.vue ALEEnable
+let g:ale_linters_explicit = 1
+"let g:ale_disable_lsp = 1
+
+autocmd User ALEFixPost :edit!

@@ -42,7 +42,7 @@ call plug#begin()
     " Grep tool - super fast
     Plug 'jremmen/vim-ripgrep'
     " Linting
-    Plug 'w0rp/ale', { 'do': function('InstallPluginDependencies') }
+    Plug 'dense-analysis/ale', { 'do': function('InstallPluginDependencies') }
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
@@ -68,7 +68,6 @@ call plug#begin()
     "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     "Plug 'spf13/PIV'
     Plug 'noahfrederick/vim-composer'
-    Plug 'arnaud-lb/vim-php-namespace'
     Plug 'jwalton512/vim-blade'
     " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
     "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
@@ -87,7 +86,6 @@ call plug#begin()
     Plug 'NLKNguyen/papercolor-theme'
     Plug 'rakr/vim-one'
     " Fun
-    Plug 'johngrib/vim-game-snake'
     " Dart
     "Plug 'dart-lang/dart-vim-plugin'
     " Test
@@ -101,5 +99,7 @@ call plug#begin()
     Plug 'nikvdp/ejs-syntax'
     Plug 'stephpy/vim-yaml'
     Plug 'neoclide/coc-snippets'
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'mhartington/oceanic-next'
 
     call plug#end()
