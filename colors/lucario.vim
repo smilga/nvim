@@ -36,7 +36,7 @@ hi TabLineFill  ctermfg=12
 hi TabLine      ctermfg=17 ctermbg=11 cterm=NONE
 hi TabLineSel   ctermfg=8 ctermbg=14 cterm=NONE
 
-hi Normal       ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=#2b3e50 gui=NONE
+hi Normal       ctermfg=231 ctermbg=NONE cterm=NONE guifg=#f8f8f2 guibg=#354855 gui=NONE
 hi Boolean      ctermfg=177 ctermbg=NONE cterm=NONE guifg=#ca94ff guibg=NONE gui=NONE
 hi Character    ctermfg=177 ctermbg=NONE cterm=NONE guifg=#ca94ff guibg=NONE gui=NONE
 hi Comment      ctermfg=44 ctermbg=NONE cterm=NONE guifg=#5c98cd guibg=NONE gui=NONE
@@ -95,11 +95,6 @@ hi rubyRailsARAssociationMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef
 hi rubyRailsARMethod            ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi rubyRailsRenderMethod        ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi rubyRailsMethod              ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
-
-" eRuby
-hi erubyDelimiter   ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-hi erubyComment     ctermfg=68 ctermbg=NONE cterm=NONE guifg=#5c98cd guibg=NONE gui=NONE
-hi erubyRailsMethod ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 
 " HTML
 hi htmlTag          ctermfg=15 ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE

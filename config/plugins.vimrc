@@ -1,8 +1,5 @@
 call plug#begin()
-
-    " Snippets
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
     " Treeview
     Plug 'scrooloose/nerdtree'
     " Search in project
@@ -21,7 +18,6 @@ call plug#begin()
     Plug 'mattn/emmet-vim'
     " Git wrapper
     Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
     " Tags
     "Plug 'ludovicchabant/vim-gutentags'
     " Show tags at right side window
@@ -31,24 +27,19 @@ call plug#begin()
     " Shows uneccesary whitespace
     Plug 'ntpeters/vim-better-whitespace'
     " Comments toggle
-    Plug 'tpope/vim-commentary'
+    Plug 'preservim/nerdcommenter'
     " Camelcase and sneakcase words navigation
     Plug 'bkad/CamelCaseMotion'
-    " Fuzzy finder
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'junegunn/fzf.vim'
     " Distraction free mode
     Plug 'junegunn/goyo.vim'
     " Grep tool - super fast
     Plug 'jremmen/vim-ripgrep'
     " Linting
-    Plug 'dense-analysis/ale', { 'do': function('InstallPluginDependencies') }
+    Plug 'dense-analysis/ale',
     " Python
     Plug 'neovim/pynvim'
     " Autocomplete
-    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm install'}
-    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    "Plug 'zchee/deoplete-go', { 'do': 'make'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Quick fix buffer edit
     Plug 'stefandtw/quickfix-reflector.vim'
     " Highlights ex commands
@@ -69,25 +60,13 @@ call plug#begin()
     "Plug 'spf13/PIV'
     Plug 'noahfrederick/vim-composer'
     Plug 'jwalton512/vim-blade'
-    " requires 'pecl install msgpack' and composer install in ~/.config/nvim/config/plugged/phpcd.vim/
-    "Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
     " JS
     Plug 'isRuslan/vim-es6'
     Plug 'pangloss/vim-javascript'
     " Dockerfile
     Plug 'ekalinin/Dockerfile.vim'
     " Line
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'ayu-theme/ayu-vim'
-    " Themes
     Plug 'smilga/tokyo-metro.vim'
-    Plug 'NovaDev94/lightline-onedark'
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'rakr/vim-one'
-    " Fun
-    " Dart
-    "Plug 'dart-lang/dart-vim-plugin'
     " Test
     Plug 'janko/vim-test'
     " Time tracker
@@ -95,11 +74,13 @@ call plug#begin()
     " Markdonw
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
-    Plug 'mattn/vim-goimports'
     Plug 'nikvdp/ejs-syntax'
     Plug 'stephpy/vim-yaml'
     Plug 'neoclide/coc-snippets'
     Plug 'arcticicestudio/nord-vim'
     Plug 'mhartington/oceanic-next'
+    Plug 'chamindra/marvim'
+    Plug 'aklt/plantuml-syntax'
+    Plug 'scrooloose/vim-slumlord'
 
-    call plug#end()
+call plug#end()

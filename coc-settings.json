@@ -1,36 +1,23 @@
 {
   "languageserver": {
-    "dart": {
-      "command": "dart",
-      "args": [
-        "/usr/lib/dart/bin/snapshots/analysis_server.dart.snapshot",
-        "--lsp"
-      ],
-      "filetypes": ["dart"],
-      "disableDynamicRegister": true,
-      "trace.server": "verbose"
-    },
-    "clangd": {
-      "command": "clangd",
-      "args": ["--background-index"],
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
       "rootPatterns": [
-        "compile_flags.txt",
-        "compile_commands.json",
-        ".vim/",
-        ".git/",
-        ".hg/"
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
       ],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
+      "filetypes": ["hs", "lhs", "haskell"]
     },
     "golang": {
-      "command": "/home/kaspars/go/bin/gopls",
+      "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"],
       "initializationOptions": {
-        "usePlaceholders": true,
-        "completeUnimported": true,
-        "staticcheck": true,
-        "experimentalWorkspaceModule": true
+        "usePlaceholders": true
       }
     }
   },
@@ -41,21 +28,29 @@
     "typescriptreact",
     "javascriptreact"
   ],
-  "eslint.trace.server": "verbose",
-  "npm.binPath": "npm",
-  "intelephense.licenceKey": "",
+  "intelephense.licenceKey": "00XOLZS6HJSQGZC",
   "cSpell.userWords": [
+    "Dispatchable",
     "Laravel",
+    "Oidc",
     "Phpunit",
-    "Tymon",
     "Unimported",
     "Unprocessable",
+    "Vuetify",
+    "firestore",
+    "gflog",
     "gopls",
-    "kaspars",
-    "maxtraffic",
     "mixins",
-    "staticcheck",
-    "webpush"
+    "staticcheck"
   ],
-  "diagnostic.displayByAle": true
+  "git.addedSign.hlGroup": "GitGutterAdd",
+  "git.changedSign.hlGroup": "GitGutterChange",
+  "git.removedSign.hlGroup": "GitGutterDelete",
+  "git.topRemovedSign.hlGroup": "GitGutterDelete",
+  "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
+  "diagnostic.messageDelay": 200,
+  "diagnostic.refreshOnInsertMode": true,
+  "coc.preferences.enableFloatHighlight": false,
+  "vetur.experimental.templateInterpolationService": true,
+  "vetur.validation.templateProps": true
 }

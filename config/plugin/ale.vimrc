@@ -16,14 +16,16 @@ highlight ALEWarningSign ctermfg=11 ctermbg=none guifg=#ED6237 guibg=none
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
+\   'javascript': ['eslint', 'trim_whitespace', 'remove_trailing_lines'],
 \   'json': ['prettier'],
-\   'php': ['php_cs_fixer'],
 \   'typescript': ['eslint'],
+\   'php': ['php_cs_fixer'],
 \   'vue': ['eslint'],
 \   'dart': ['dartfmt'],
 \   'c': ['clang-format'],
+\   'go': ['gofmt', 'goimports'],
 \}
+"\   'php': ['php_cs_fixer'],
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -31,10 +33,6 @@ let g:ale_linters = {
 \   'vue': ['eslint'],
 \   'dart': ['dartanalyzer'],
 \}
-
-" https://github.com/FriendsOfPHP/PHP-CS-Fixer
-let g:ale_php_phpcs_use_global = 1
-let g:ale_php_cs_fixer_use_global = 1
 
 let g:ale_go_golangci_lint_package = 0
 
@@ -47,6 +45,4 @@ let g:ale_javascript_prettier_use_local_config = 1
 "autocmd BufEnter *.vue ALEDisable
 "autocmd BufLeave *.vue ALEEnable
 let g:ale_linters_explicit = 1
-"let g:ale_disable_lsp = 1
-
-autocmd User ALEFixPost :edit!
+let g:ale_disable_lsp = 1
