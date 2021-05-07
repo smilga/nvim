@@ -17,6 +17,7 @@ endif
 
 filetype plugin on
 colorscheme tokyo-metro
+set encoding=UTF-8
 
 set cmdheight=1
 set nocursorcolumn

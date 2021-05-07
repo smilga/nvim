@@ -1,7 +1,9 @@
 call plug#begin()
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'preservim/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-    " Treeview
-    Plug 'scrooloose/nerdtree'
     " Search in project
     Plug 'dyng/ctrlsf.vim'
     " Kill buffer but keep split :BD<CR>

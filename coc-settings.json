@@ -52,5 +52,9 @@
   "diagnostic.refreshOnInsertMode": true,
   "coc.preferences.enableFloatHighlight": false,
   "vetur.experimental.templateInterpolationService": true,
-  "vetur.validation.templateProps": true
+  "vetur.validation.templateProps": true,
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "explorer.keyMappings.global": {
+    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"]
+  }
 }
