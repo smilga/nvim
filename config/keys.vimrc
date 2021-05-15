@@ -58,11 +58,6 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-nnoremap ; :Denite buffer<CR>
-nnoremap <leader>f :DeniteProjectDir file/rec<CR>
-nnoremap <leader>s :<C-u>Denite grep:. -no-empty<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
-
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
@@ -77,10 +72,10 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
 " GoTo code navigation.
-nmap <leader>g <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader> gi <Plug>(coc-implementation)
-nmap <leader>r <Plug>(coc-references)
+nmap <silent>gd <Plug>(coc-definition)
+nmap <silent>gy <Plug>(coc-type-definition)
+nmap <silent>gi <Plug>(coc-implementation)
+nmap <silent>rr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -92,3 +87,16 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+if exists('*complete_info')
+  inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fd <cmd>Telescope coc definition<cr>
+nnoremap <leader>fr <cmd>Telescope coc references<cr>
+nnoremap <leader>fa <cmd>Telescope coc file_code_actions<cr>

@@ -1,11 +1,13 @@
 call plug#begin()
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'fannheyward/telescope-coc.nvim'
+
     Plug 'ryanoasis/vim-devicons'
     Plug 'preservim/nerdtree'
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-    " Search in project
-    Plug 'dyng/ctrlsf.vim'
     " Kill buffer but keep split :BD<CR>
     Plug 'qpkorr/vim-bufkill'
     " Display marks at near line numbers
@@ -34,8 +36,6 @@ call plug#begin()
     Plug 'bkad/CamelCaseMotion'
     " Distraction free mode
     Plug 'junegunn/goyo.vim'
-    " Grep tool - super fast
-    Plug 'jremmen/vim-ripgrep'
     " Linting
     Plug 'dense-analysis/ale',
     " Python
