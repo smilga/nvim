@@ -16,14 +16,15 @@ if (empty($TMUX))
 endif
 
 filetype plugin on
-colorscheme tokyo-metro
+let g:tokyonight_style = "night"
+colorscheme tokyonight
 set encoding=UTF-8
 
 set cmdheight=1
 set nocursorcolumn
 set nocursorline
 syntax sync minlines=256
-set synmaxcol=120
+set synmaxcol=300
 
 set diffopt+=vertical
 set nocompatible

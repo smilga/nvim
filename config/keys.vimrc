@@ -1,16 +1,17 @@
 " Leader
 let mapleader=","
+let maplocalleader = ","
 nmap <leader>w :w<CR>
 nmap <leader>r :syntax sync fromstart<cr>
 nmap <Leader><space> :nohlsearch<cr>
-nmap <C-\> :NERDTreeToggle<cr>
+nmap <C-\> :Defx<cr>
 nmap <C-_> :TagbarToggle<cr>
 nmap <C-F> <Plug>CtrlSFPrompt
 nmap <leader>k :BD<CR>
-nmap <leader>q :q<CR>
+nmap <leader>q :close<CR>
 nmap <leader>h :sp<CR>
 nmap <leader>v :vs<CR>
-nmap <leader>go :Goyo<CR>
+nmap <leader>o :Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
 " Move through splits
 nmap <C-J> <C-W><C-J>
@@ -61,13 +62,6 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Applying codeAction to the selected region.
-" Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
@@ -93,10 +87,9 @@ if exists('*complete_info')
 endif
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fd <cmd>Telescope coc definition<cr>
-nnoremap <leader>fr <cmd>Telescope coc references<cr>
-nnoremap <leader>fa <cmd>Telescope coc file_code_actions<cr>
+nnoremap <leader>f :Telescope find_files<CR>
+nnoremap <leader>g :Telescope live_grep<CR>
+nnoremap <leader>l :Telescope buffers<CR>
+nnoremap <leader>d :Telescope coc definitions<CR>
+nnoremap <leader>r :Telescope coc references<CR>
+nnoremap <leader>a :Telescope coc file_code_actions<CR>

@@ -1,13 +1,23 @@
 call plug#begin()
+    Plug 'Olical/conjure'
+    Plug 'kovisoft/paredit'
+    Plug 'vlime/vlime', {'rtp': 'vim/'}
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'cespare/vim-toml'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'kristijanhusak/defx-icons'
+    Plug 'kristijanhusak/defx-git'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+    Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-project.nvim'
     Plug 'fannheyward/telescope-coc.nvim'
 
     Plug 'ryanoasis/vim-devicons'
-    Plug 'preservim/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     " Kill buffer but keep split :BD<CR>
     Plug 'qpkorr/vim-bufkill'
     " Display marks at near line numbers
@@ -71,8 +81,6 @@ call plug#begin()
     Plug 'smilga/tokyo-metro.vim'
     " Test
     Plug 'janko/vim-test'
-    " Time tracker
-    Plug 'git-time-metric/gtm-vim-plugin'
     " Markdonw
     Plug 'godlygeek/tabular'
     Plug 'plasticboy/vim-markdown'
@@ -84,5 +92,6 @@ call plug#begin()
     Plug 'chamindra/marvim'
     Plug 'aklt/plantuml-syntax'
     Plug 'scrooloose/vim-slumlord'
+    Plug 'jremmen/vim-ripgrep'
 
 call plug#end()

@@ -1,5 +1,5 @@
 "============== Install extensions ======================
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-eslint', 'coc-css', 'coc-vetur', 'coc-sql', 'coc-docker', 'coc-import-cost', 'coc-spell-checker', 'coc-phpls', 'coc-snippets', 'coc-tsserver', 'coc-phpactor']
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-eslint', 'coc-css', 'coc-vetur', 'coc-sql', 'coc-docker', 'coc-import-cost', 'coc-spell-checker', 'coc-phpls', 'coc-snippets', 'coc-tsserver', 'coc-phpactor', 'coc-go', 'coc-rust-analyzer', 'coc-toml', 'coc-conjure']
 "========================================================
 " TextEdit might fail if hidden is not set.
 set hidden

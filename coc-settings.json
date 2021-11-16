@@ -12,13 +12,20 @@
       ],
       "filetypes": ["hs", "lhs", "haskell"]
     },
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"],
-      "initializationOptions": {
-        "usePlaceholders": true
-      }
+    "elmLS": {
+        "command": "elm-language-server",
+        "filetypes": ["elm"],
+        "rootPatterns": ["elm.json"]
+    },
+    "racket": {
+        "command": "racket",
+        "args": [
+            "--lib",
+            "racket-langserver"
+        ],
+        "filetypes": [
+            "scheme"
+        ]
     }
   },
   "coc.preferences.hoverTarget": "float",
@@ -34,14 +41,35 @@
     "Laravel",
     "Oidc",
     "Phpunit",
+    "UPSELL",
     "Unimported",
     "Unprocessable",
     "Vuetify",
+    "WEBPUSH",
+    "activecampaign",
+    "automizy",
+    "dotdigital",
     "firestore",
+    "getresponse",
     "gflog",
     "gopls",
+    "isbot",
+    "mailchimp",
+    "mailerlite",
+    "mailigen",
+    "mautic",
+    "maxtraffic",
     "mixins",
-    "staticcheck"
+    "mxapis",
+    "onclick",
+    "pageviews",
+    "reqwest",
+    "rollups",
+    "sendgrid",
+    "smaily",
+    "spinwheel",
+    "staticcheck",
+    "wasm"
   ],
   "git.addedSign.hlGroup": "GitGutterAdd",
   "git.changedSign.hlGroup": "GitGutterChange",
@@ -56,5 +84,6 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"]
-  }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["rust"]
 }

@@ -21,6 +21,7 @@ let g:ale_fixers = {
 \   'typescript': ['eslint'],
 \   'php': ['php_cs_fixer'],
 \   'vue': ['eslint'],
+\   'elm': ['elm-format'],
 \   'dart': ['dartfmt'],
 \   'c': ['clang-format'],
 \   'go': ['gofmt', 'goimports'],
@@ -31,10 +32,11 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'go': ['golangci-lint', 'gopls'],
 \   'vue': ['eslint'],
+\   'elm': ['elm_ls'],
 \   'dart': ['dartanalyzer'],
 \}
 
-let g:ale_go_golangci_lint_package = 0
+let g:ale_go_golangci_lint_package = 1
 
 let g:ale_php_phpstan_configuration = 'phpstan.neon'
 let g:ale_php_phpstan_level = 'max'
@@ -46,3 +48,12 @@ let g:ale_javascript_prettier_use_local_config = 1
 "autocmd BufLeave *.vue ALEEnable
 let g:ale_linters_explicit = 1
 let g:ale_disable_lsp = 1
+let g:ale_elm_ls_use_global = 1
+
+let g:LanguageClient_serverCommands = {
+  \ 'elm': ['elm-language-server'],
+  \ }
+
+let g:LanguageClient_rootMarkers = {
+  \ 'elm': ['elm.json'],
+  \ }
