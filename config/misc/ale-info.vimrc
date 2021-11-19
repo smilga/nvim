@@ -7,6 +7,7 @@ let g:extend_ale_win_id = 0
 let g:extend_ale_cursor_err = 0
 
 autocmd CursorMoved * call AleCurorsPreview()
+autocmd BufWritePost * call AleCurorsPreview()
 
 " TODO remove in insert mode
 " TODO can I get information not from highlight but from ale errors?
@@ -42,10 +43,17 @@ function! AleCurorsPreview() abort
 endfunction
 
 function! s:CursorMatchHighlight(highlight, lnum, col)
-    let l:multiline = a:highlight['lnum'] < a:highlight['end_lnum']
+    let l:multiline = 0
+    if has_key(a:highlight, 'end_lnum')
+        let l:multiline = a:highlight['lnum'] < a:highlight['end_lnum']
+    endif
+
+    if !l:multiline && has_key(a:highlight, 'end_col')
+        return a:highlight['lnum'] == a:lnum && a:highlight['col'] <= a:col && a:highlight['end_col'] >= a:col
+    endif
 
     if !l:multiline
-        return a:highlight['lnum'] == a:lnum && a:highlight['col'] <= a:col && a:highlight['end_col'] >= a:col
+        return a:highlight['lnum'] == a:lnum && a:highlight['col'] <= a:col
     endif
 
     " first line

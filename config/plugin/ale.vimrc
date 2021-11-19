@@ -17,7 +17,6 @@ let g:ale_linters_explicit = 1
 let g:ale_disable_lsp = 1
 let g:ale_hover_to_floating_preview = 1
 let g:ale_floating_preview = 1
-let g:ale_floating_window_border = []
 " Shows error information in floating, when cursor on line
 "let g:ale_cursor_detail = 1
 let g:ale_echo_cursor = 1
@@ -40,7 +39,7 @@ let g:ale_fixers = {
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['golangci-lint', 'gopls'],
+\   'go': ['golangci-lint'],
 \   'vue': ['eslint'],
 \   'elm': ['elm_ls'],
 \   'dart': ['dartanalyzer'],
@@ -50,6 +49,8 @@ let g:ale_go_golangci_lint_package = 1
 
 let g:ale_php_phpstan_configuration = 'phpstan.neon'
 let g:ale_php_phpstan_level = 'max'
+
+let g:ale_go_golangci_lint_options = ''
 
 " JS
 let g:ale_javascript_prettier_use_local_config = 1

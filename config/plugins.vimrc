@@ -1,4 +1,7 @@
 call plug#begin()
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'kosayoda/nvim-lightbulb'
     Plug 'Olical/conjure'
     Plug 'kovisoft/paredit'
     Plug 'vlime/vlime', {'rtp': 'vim/'}
@@ -17,7 +20,6 @@ call plug#begin()
     Plug 'nvim-telescope/telescope-project.nvim'
     Plug 'fannheyward/telescope-coc.nvim'
 
-    Plug 'ryanoasis/vim-devicons'
     " Kill buffer but keep split :BD<CR>
     Plug 'qpkorr/vim-bufkill'
     " Display marks at near line numbers
