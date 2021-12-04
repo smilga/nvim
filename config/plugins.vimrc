@@ -1,4 +1,7 @@
 call plug#begin()
+    Plug 'airblade/vim-rooter'
+    Plug 'evidens/vim-twig'
+    Plug 'ellisonleao/glow.nvim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'kosayoda/nvim-lightbulb'
@@ -70,7 +73,6 @@ call plug#begin()
     " Vue
     Plug 'posva/vim-vue'
     " PHP
-    "Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
     "Plug 'spf13/PIV'
     Plug 'noahfrederick/vim-composer'
     Plug 'jwalton512/vim-blade'

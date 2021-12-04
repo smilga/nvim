@@ -10,3 +10,6 @@ for f in split(glob('$HOME/.config/nvim/config/misc/*.vimrc'), '\n')
 endfor
 
 source $HOME/.config/nvim/config/keys.vimrc
+
+"TODO put this somewhere else
+let g:PhpactorRootDirectoryStrategy=function("FindRootDirectory")

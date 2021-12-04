@@ -48,6 +48,7 @@ set ignorecase
 set smartcase
 set grepprg=ag
 set conceallevel=0 " dont hide quotes in json
+set mouse=nicr " dont scroll outside vim
 
 set list lcs=tab:>·
 

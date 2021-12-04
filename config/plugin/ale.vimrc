@@ -42,6 +42,7 @@ let g:ale_linters = {
 \   'go': ['golangci-lint'],
 \   'vue': ['eslint'],
 \   'elm': ['elm_ls'],
+\   'php': ['phpactor'],
 \   'dart': ['dartanalyzer'],
 \}
 

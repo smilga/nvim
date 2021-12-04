@@ -71,6 +71,15 @@ nmap <silent>gy <Plug>(coc-type-definition)
 nmap <silent>gi <Plug>(coc-implementation)
 nmap <silent>rr <Plug>(coc-references)
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>l :Telescope buffers<CR>
+nnoremap <leader>fd :Telescope coc definitions<CR>
+nnoremap <leader>fr :Telescope coc references<CR>
+nnoremap <leader>fa :Telescope coc file_code_actions<CR>
+nnoremap <leader>fc <cmd>lua require('telescope.builtin').commands()<cr>
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -85,11 +94,3 @@ endfunction
 if exists('*complete_info')
   inoremap <silent><expr> <cr> complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" Find files using Telescope command-line sugar.
-nnoremap <leader>f :Telescope find_files<CR>
-nnoremap <leader>g :Telescope live_grep<CR>
-nnoremap <leader>l :Telescope buffers<CR>
-nnoremap <leader>d :Telescope coc definitions<CR>
-nnoremap <leader>r :Telescope coc references<CR>
-nnoremap <leader>a :Telescope coc file_code_actions<CR>
