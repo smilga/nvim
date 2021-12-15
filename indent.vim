@@ -1,0 +1,12 @@
+autocmd FileType javascript setlocal shiftwidth=2
+autocmd FileType javascript setlocal tabstop=2
+autocmd FileType javascript setlocal softtabstop=2
+autocmd FileType html setlocal shiftwidth=2
+autocmd FileType html setlocal tabstop=2
+autocmd FileType html setlocal softtabstop=2
+autocmd FileType scss setlocal shiftwidth=2
+autocmd FileType scss setlocal tabstop=2
+autocmd FileType scss setlocal softtabstop=2
+autocmd FileType vue setlocal shiftwidth=2
+autocmd FileType vue setlocal tabstop=2
+autocmd FileType vue setlocal softtabstop=2

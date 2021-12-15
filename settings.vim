@@ -15,8 +15,8 @@ if (empty($TMUX))
   endif
 endif
 
-filetype plugin on
-let g:tokyonight_style = "night"
+filetype plugin indent on
+"let g:tokyonight_style = "night"
 colorscheme tokyonight
 set encoding=UTF-8
 
@@ -26,6 +26,7 @@ set nocursorline
 syntax sync minlines=256
 set synmaxcol=300
 
+set signcolumn=yes
 set diffopt+=vertical
 set nocompatible
 set modelines=1
@@ -49,6 +50,7 @@ set smartcase
 set grepprg=ag
 set conceallevel=0 " dont hide quotes in json
 set mouse=nicr " dont scroll outside vim
+set timeoutlen=500
 
 set list lcs=tab:>·
 
