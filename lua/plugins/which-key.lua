@@ -14,7 +14,7 @@ wk.register({
 	i = {"<cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>", "Implementations"},
   },
   ["<leader>l"] = {"<cmd>Telescope buffers<cr>", "List Buffers"},
-  ["p"] = {
+  ["<leader>p"] = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
     i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -22,7 +22,7 @@ wk.register({
     s = { "<cmd>PackerSync<cr>", "Sync" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
-  ["t"] = {
+  ["<leader>t"] = {
       name = "Trouble",
       r = { "<cmd>Trouble lsp_references<cr>", "References" },
       f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -33,4 +33,5 @@ wk.register({
   },
   ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Documentation" },
   ["<C-n>"] = { "<cmd>:NvimTreeFindFileToggle<cr>", "File Tree" },
+  ["<leader>h"] = { "<cmd>:noh<cr>", "Clear highlight" },
 })
