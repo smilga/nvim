@@ -5,7 +5,7 @@ vim.opt.cursorline = true
 vim.opt.wrap = false
 vim.opt.backup = false
 vim.opt.swapfile = false
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = {"unnamed", "unnamedplus"}
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.ignorecase = true
 vim.opt.mouse = "a"
@@ -21,17 +21,23 @@ vim.opt.relativenumber = true
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 100
 vim.opt.showtabline = 0
+vim.opt.undofile = true
+vim.opt.timeoutlen = 300
+vim.opt.wildignorecase = true
+vim.opt.autoread = true
 
--- -- Load colorscheme, there are more fox themes check them
--- require('nightfox').load('nightfox')
+vim.lsp.set_log_level("WARN")
 
--- Example config in Lua
-vim.g.tokyonight_style = "light"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- Ignore search
+vim.opt.path:remove "/usr/include"
+vim.opt.path:append "**"
+vim.opt.wildignore:append "**/.git/*"
+vim.opt.wildignore:append "**/build/*"
 
--- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
-
--- Load the colorscheme
-vim.cmd[[colorscheme tokyonight]]
+-- Highlight on yank
+vim.cmd [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]]
