@@ -2,7 +2,6 @@ local M = {}
 
 function M.setup()
   local packer_bootstrap = false
-
   local conf = {
     display = {
       open_fn = function()
@@ -54,12 +53,21 @@ function M.setup()
     }
 
     use {
-      'shaunsingh/nord.nvim',
-      config = function()
-        vim.cmd "colorscheme nord"
-        vim.g.nord_italic = false
-      end,
+        'folke/tokyonight.nvim',
+        config = function()
+            vim.g.tokyonight_day_brightness	= 0
+            vim.g.tokyonight_transparent_sidebar = true
+            vim.g.tokyonight_style = "day"
+            vim.cmd "colorscheme tokyonight"
+        end,
     }
+    -- use {
+    --   'shaunsingh/nord.nvim',
+    --   config = function()
+    --     vim.cmd "colorscheme nord"
+    --     vim.g.nord_italic = false
+    --   end,
+    -- }
 
     use {
       "folke/which-key.nvim",
@@ -225,7 +233,11 @@ use {
   requires = { 
     'nvim-lua/plenary.nvim',
     'sindrets/diffview.nvim' 
-  }
+  },
+  config = function()
+    require("plugins.neogit").setup()
+    require("plugins.diffview").setup()
+  end,
 }
 
     -- Git
